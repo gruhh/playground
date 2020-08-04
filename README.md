@@ -1,2 +1,3 @@
-# playground
-Code snippets and fun stuff
+# Playground
+
+Some code snippets and fun stuff shared with open source.
