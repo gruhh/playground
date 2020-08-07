@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            /*
+            This is a simple way to understand Flexbox.
+            To know more: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox
+
+            To use CSS Flexbox:
+                - Declare a flex container and the children elements will become the 'items'
+                - Use only the properties needed to achieve the results you want
+                - Simplify
+
+            How I would explain Flexbox:
+                - The container is a 'board'
+                - The items are 'sticky notes made of a soft material'
+                  (because they can be stretched, resized and distributed around)
+                - We want to distribute and align the 'notes', so we imagine 'axis' lines
+                - The 'axis' is the main direction we are organizing the 'notes': a row or a column
+                - If there are several 'notes' we could wrap them on multiple rows or columns
+                - The 'cross-axis' is perpendicular to the 'axis'
+
+            So, let's see some code:
+            */
+
+            .container {
+                /*
+                1. Create the board
+                */
+                display: flex; /* < Declare the flex container */
+
+                /*
+                2. Imagine the axis
+                */
+                flex-direction: column; /* < The main axis is a row or a column (and maybe *-reverse) */
+                flex-wrap: wrap; /* < How to wrap the items creating one or more row/column */
+
+                /*flex-flow: row wrap; /* < Is the shorthanded of: flex-direction flex-wrap */
+
+                /*
+                3. Define how we will distribute and align things
+
+                    (This is the core concept, and here you have to play around,
+                    many times you need only 1 or 2 of those properties,
+                    and those can be influenced by the items sizes.
+
+                    The description may sound complicated.
+                    Don't worry! Open the Dev Tools and play a little.
+
+                    Tips:
+                    1- If nothing happens, use 1 property a time to inspect the behaviour.
+                    2- If nothing happens, disable flex-grow, flex-shrink, flex-basis on items.
+                    3- If nothing happens, check for width, height, padding, margins on items.)
+                */
+                justify-content: center; /* < Distribute the items inside the 'main axis' */
+                align-items: center; /* < Align items in the 'cross-axis' */
+
+                /*
+                3.1 If the items are wrapping on multiple rows or columns
+                */
+                align-content: space-evenly; /* < Align the 'cross-axis' in the containers */
+            }
+
+            .container > * {
+                /*
+                4. Resize the items (if you need)
+
+                If you are going to resize some of the items using 'flex', 
+                seems to be a good practice to set a 'flex' with 
+                a 'default' to every item in the container.
+
+                Another good practice here is to use the shorthanded version.
+                */
+                flex: 1 0 auto; /* < Shorthanded version of: flex-grow (optional)flex-shrink (optional)flex-basis */
+
+                /*flex-grow: 1; /* < The relative growth of the item */
+                /*flex-shrink: 0; /* < The relative shrink of the item */
+                /*flex-basis: auto; /* < The base size of the item, before grow and shrink */
+            }
+
+            .container .specific-item {
+                /* 
+                5. Now you can set specific properties to an item 
+                */
+
+                flex: 2; /* < Overwrite the flex */
+                order: 1; /* < Change the order of this item (default is 0) */
+                align-self: flex-start; /* < Change the align-items for this item */
+            }
+
+            /* 
+            EXAMPLE IN PRACTICE 
+            */
+
+            .container-example {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-evenly;
+                align-content: center;
+
+                /* No flex here: */
+                width: 100%;
+                height: 300px;
+                background-color: darkgrey;
+            }
+
+            .container-example > * {
+                /*flex: 1 0 auto; /* < If you want to see the resizing */
+
+                /* No flex here: */
+                background-color: lightgrey;
+                text-align: center;
+                border: 1px solid grey;
+                padding: 2em;
+                width: 50px;
+                /*margin: 0 1em; /* < This can influence how you see things */
+            }
+
+            .container-example .item-2 {
+                /*flex: 2; /* < If you want to see the resizing */
+                order: 1;
+
+                /* No flex here: */
+                background-color: whitesmoke;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container-example">
+            <div>#1</div>
+            <div class="item-2">#2</div>
+            <div>#3</div>
+            <div>#4</div>
+        </div>
+    </body>
+</html>

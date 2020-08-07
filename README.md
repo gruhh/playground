@@ -1,12 +1,15 @@
-# Playground
+# Collection
 
-Some code snippets and fun stuff shared with open source.
+Some code snippets shared with open source.
 
 ### Javascript
 
--   [Array Shuffle function (2020)](https://github.com/gruhh/playground/blob/master/javascript-array-shuffle/shuffle.js)
+-   [Array Shuffle function (2020)](https://github.com/gruhh/snippets-collection/blob/master/javascript-array-shuffle/shuffle.js)
+
+### CSS
+
+-   [Understanding the CSS Flexbox (2020)](https://github.com/gruhh/snippets-collection/blob/master/understanding-css-flexbox/flexbox.html)
 
 ---
 
-![playground](https://img.shields.io/badge/playground-yes-success)
 ![license](https://img.shields.io/github/license/gruhh/playground)
