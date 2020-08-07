@@ -5,7 +5,7 @@ function shuffle(arr) {
 
     do {
         // get a random position of the holder
-        random = Math.floor(Math.random() * holder.length);
+        let random = Math.floor(Math.random() * holder.length);
 
         //add the value of that position to the new array
         newArray.push(holder[random]);
