@@ -20,6 +20,7 @@ Some code snippets shared with open source.
 
 ### Unity
 
+-   [C# - UI Safe Area to Canvas (2020)](https://github.com/gruhh/snippets-collection/blob/master/unity-csharp-ui-safe-area/UISafeArea.cs)
 -   [C# - Zero One Circumference Clamp (2020)](https://github.com/gruhh/snippets-collection/blob/master/csharp-zero-one-circumference-clamp/Circumference.cs)
 
 ---
